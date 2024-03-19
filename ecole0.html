@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Journal d'un Kitsune</title>
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/style_e0.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+        <script src="scripts/script_e0.js" defer></script>
+    </head>
+    <body>
+        <header><!-- style.css / commun à toutes les pages -->
+            <div class="titre">
+                <img src="images/mon_hantai.png" alt="Mon Impérial" class="logo">
+                <h1><a href="index.html">Journal d'un Kitsune</a><span class="sous-titre"> By AlphaFox</span></h1>
+                <img src="images/mon_renard.png" alt="Mon clan du Renard" class="logo">
+            </div>
+            <nav>
+                <div class="menu">
+                    <label for="bouton_maps">Cartes</label>
+                    <input type="checkbox" id="bouton_maps" name="bouton_maps">
+                    <div class="sous_menu">
+                        <a href="map1.html">Rokugan</a>
+                        <a href="map2.html">Crabe</a>
+                        <a href="map3.html">Grue</a>
+                        <a href="map4.html">Lion</a>
+                        <a href="map5.html">Phénix</a>
+                        <a href="map6.html">Dragon</a>
+                        <a href="map7.html">Licorne</a>
+                        <a href="map8.html">Scorpion</a>
+                    </div>
+                </div>
+                <div class="menu">
+                    <label for="bouton_ecoles">Écoles</label>
+                    <input type="checkbox" id="bouton_ecoles" name="bouton_ecoles">
+                    <div class="sous_menu">
+                        <a href="ecole0.html">Résumés</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <aside>
+            <fieldset id="clans">
+                <legend>Clans</legend>
+                <input type="checkbox" name="check_crabe" id="check_crabe" class="check labelCrabe" checked>
+                <label for="check_crabe" class="faux_boutton" id="label_crabe">Crabe</label>
+                <input type="checkbox" name="check_grue" id="check_grue" class="check" checked>
+                <label for="check_grue" class="faux_boutton" id="label_grue">Grue</label>
+                <input type="checkbox" name="check_dragon" id="check_dragon" class="check" checked>
+                <label for="check_dragon" class="faux_boutton" id="label_dragon">Dragon</label>
+                <input type="checkbox" name="check_lion" id="check_lion" class="check" checked>
+                <label for="check_lion" class="faux_boutton" id="label_lion">Lion</label>
+                <input type="checkbox" name="check_phenix" id="check_phenix" class="check" checked>
+                <label for="check_phenix" class="faux_boutton" id="label_phenix">Phénix</label>
+                <input type="checkbox" name="check_scorpion" id="check_scorpion" class="check" checked>
+                <label for="check_scorpion" class="faux_boutton" id="label_scorpion">Scorpion</label>
+                <input type="checkbox" name="check_licorne" id="check_licorne" class="check" checked>
+                <label for="check_licorne" class="faux_boutton" id="label_licorne">Licorne</label>
+                <input type="checkbox" name="check_imperiaux" id="check_imperiaux" class="check" checked>
+                <label for="check_imperiaux" class="faux_boutton" id="label_imperiaux">Impériaux</label>
+                <input type="checkbox" name="check_autre" id="check_autre" class="check" checked>
+                <label for="check_autre" class="faux_boutton" id="label_autre">Autre</label>
+                <input type="checkbox" name="check_mineur" id="check_mineur" class="check" checked>
+                <label for="check_mineur" class="faux_boutton" id="label_mineur">Mineur</label>
+            </fieldset>
+
+            <fieldset id="roles">
+                <legend>Rôles</legend>
+                <input type="radio" name="check_role" id="check_tous" class="check labelTous" checked>
+                <label for="check_tous" class="faux_boutton" id="label_tous">Tous</label>
+                <input type="radio" name="check_role" id="check_bushi" class="check labelBushi">
+                <label for="check_bushi" class="faux_boutton" id="label_bushi" title="Guerriers, gardes et instructeurs">Bushi</label>
+                <input type="radio" name="check_role" id="check_court" class="check">
+                <label for="check_court" class="faux_boutton" id="label_court" title="Politiciens, émissaires et fonctionnaires">Courtisan</label>
+                <input type="radio" name="check_role" id="check_shino" class="check">
+                <label for="check_shino" class="faux_boutton" id="label_shino" title="Assassins et espions">Shinobi</label>
+                <input type="radio" name="check_role" id="check_artis" class="check">
+                <label for="check_artis" class="faux_boutton" id="label_artis" title="Créateurs, conseillers, ingénieurs et artistes">Artisan</label>
+                <input type="radio" name="check_role" id="check_moine" class="check">
+                <label for="check_moine" class="faux_boutton" id="label_moine" title="Influenceurs politiques, historiens itinérants, adeptes de la vie monacale et (en théorie) au-dessus des considérations matérielles">Moine</label>
+                <input type="radio" name="check_role" id="check_sage" class="check">
+                <label for="check_sage" class="faux_boutton" id="label_sage" title="Détenteurs de pouvoirs surnaturels différents des capacités des shugenja, ou dépassant ces dernières">Sage</label>
+                <input type="radio" name="check_role" id="check_shug" class="check">
+                <label for="check_shug" class="faux_boutton" id="label_shug" title="Prêtres de la caste des samouraïs ou autres individus détenteurs d’un lien spécial avec les kamis ou capables de les contrôler">Shugenja</label>
+            </fieldset>
+
+            <fieldset id="livres">
+                <legend>Livres</legend>
+                <input type="checkbox" name="check_ldb" id="check_ldb" class="check labelLdb" checked>
+                <label for="check_ldb" class="faux_boutton" id="label_ldb" title="Livre de Base">LdB</label>
+                <input type="checkbox" name="check_outreM" id="check_outreM" class="check" checked>
+                <label for="check_outreM" class="faux_boutton" id="label_outreM">Outremonde</label>
+                <input type="checkbox" name="check_ede" id="check_ede" class="check" checked>
+                <label for="check_ede" class="faux_boutton" id="label_ede" title="L'Empire d'Emeraude">EdE</label>
+                <input type="checkbox" name="check_cdp" id="check_cdp" class="check" checked>
+                <label for="check_cdp" class="faux_boutton" id="label_cdp" title="Les Cours de Pierre">CdP</label>
+                <input type="checkbox" name="check_vdv" id="check_vdv" class="check" checked>
+                <label for="check_vdv" class="faux_boutton" id="label_vdv" title="La Voie des Vagues">VdV</label>
+                <input type="checkbox" name="check_cdlv" id="check_cdlv" class="check" checked>
+                <label for="check_cdlv" class="faux_boutton" id="label_cdlv" title="Les Champs de la Victoire">CdlV</label>
+                <input type="checkbox" name="check_lrc" id="check_lrc" class="check" checked>
+                <label for="check_lrc" class="faux_boutton" id="label_lrc" title="Les Royaumes Célestes">RC</label>
+                <input type="checkbox" name="check_plus" id="check_plus" class="check" checked>
+                <label for="check_plus" class="faux_boutton" id="label_plus" title="Supplément WEB gratuit + Kit du Meuneur">Suppléments</label>
+            </fieldset>
+        </aside>
+
+        <main><!-- style_xy / X = initiale page html, Y = numéro page html / exemple '(p)erso[1] -> style_(p)[1]' -->
+            <h2>Résumé des écoles</h2>
+
+            <section><!-- Le tableau total -->
+                <div>
+                    <div class="tableau"><!-- enTête -->
+                        <!-- <span class="a entete">Clan</span> -->
+                        <span class="a entete">Famille</span>
+                        <span class="a entete">École</span>
+                        <span class="a entete">Page</span>
+                        <span class="a entete">Rôles</span>
+                        <span class="b entete">Résumé</span>
+                    </div>
+                </div>
+
+                <div class="crabeTable"><!-- Section Crabe -->
+                    <div class="tableau crabe">
+                        <san class="e">Crabes</san>
+                    </div>
+                    <div class="tableau crabe ldb tous bushi">
+                        <span class="c">Hida</span>
+                        <span class="c"><a href="e_defenseur_hida.html">Défenseur</a></span>
+                        <span class="c">57 du LdB</span>
+                        <span class="c">Bushi</span>
+                        <span class="d">Guerrier défensif en armure lourde</span>
+                    </div>
+                    <div class="tableau crabe cdlv tous bushi court">
+                        <span class="c">Hida</span>
+                        <span class="c"><a href="">Officier</a></span>
+                        <span class="c">75 des CdlV</span>
+                        <span class="c">Bushi, Courtisan</span>
+                        <span class="d">À venir</span>
+                    </div>
+                    <div class="tableau crabe ldb tous bushi shino">
+                        <span class="c">Hiruma</span>
+                        <span class="c"><a href="e_eclaireur_hiruma.html">Éclaireur</a></span>
+                        <span class="c">58 du LdB</span>
+                        <span class="c">Bushi, Shinobi</span>
+                        <span class="d">Éclaireur versatile léger et mobile, versé dans le combat contre les grandes créatures</span>
+                    </div>
+                    <div class="tableau crabe ldb tous artis bushi">
+                        <span class="c">Kaiu</span>
+                        <span class="c"><a href="e_ingenieur_kaiu.html">Ingénieur</a></span>
+                        <span class="c">59 du LdB</span>
+                        <span class="c">Artisan, Bushi</span>
+                        <span class="d">Forgeron, ingénieur et stratège à distance</span>
+                    </div>
+                    <div class="tableau crabe lrc tous artis court">
+                        <span class="c">Kaiu</span>
+                        <span class="c"><a href="">Architecte</a></span>
+                        <span class="c">84 des RC</span>
+                        <span class="c">Artisan, Courtisan</span>
+                        <span class="d">À venir</span>
+                    </div>
+                    <div class="tableau crabe ldb tous shug bushi">
+                        <span class="c">Kuni</span>
+                        <span class="c"><a href="e_purificateur_kuni.html">Purificateur</a></span>
+                        <span class="c">60 du LdB</span>
+                        <span class="c">Shugenja, Bushi</span>
+                        <span class="d">Prêtre aguerri dans la lutte contre les créatures souillées</span>
+                    </div>
+                    <div class="tableau crabe outreM tous moine">
+                        <span class="c">Kuni</span>
+                        <span class="c"><a href="">Garant</a></span>
+                        <span class="c">91 de l'Outremonde</span>
+                        <span class="c">Moine</span>
+                        <span class="d">Prêtre raté qui compense par une grande maîtrise du Ki qui capture les créatures souillées</span>
+                    </div>
+                    <div class="tableau crabe ldb tous court">
+                        <span class="c">Yasuki</span>
+                        <span class="c"><a href="e_marchand_yasuki.html">Marchand</a></span>
+                        <span class="c">61 du LdB</span>
+                        <span class="c">Courtisan</span>
+                        <span class="d">Courtisan commerçant pour remplir les caisses par tous les moyens</span>
+                    </div>
+                    <div class="tableau crabe cdp tous bushi">
+                        <span class="c">Yasuki</span>
+                        <span class="c"><a href="">Yöjimbo</a></span>
+                        <span class="c">98 des CdP</span>
+                        <span class="c">Bushi</span>
+                        <span class="d">Garde du corps spécialisé dans la défense de groupe</span>
+                    </div>
+                </div>
+
+                <div class="grueTable"><!-- Section Grue -->
+                    <div class="tableau grue">
+                        <san class="e">Grues</san>
+                    </div>
+                    <div class="tableau grue ldb tous shug artis">
+                        <span class="c">Asahina</span>
+                        <span class="c"><a href="">Artificier</a></span>
+                        <span class="c">62 du LdB</span>
+                        <span class="c">Shugenja, Artisan</span>
+                        <span class="d">Prêtre doué dans les illusions, conjurations, améliorations et éveil d'objets</span>
+                    </div>
+                    <div class="tableau grue lrc tous court">
+                        <span class="c">Asahina</span>
+                        <span class="c"><a href="">Émissaire</a></span>
+                        <span class="c">81 des RC</span>
+                        <span class="c">Courtisan</span>
+                        <span class="d">À venir</span>
+                    </div>
+                    <div class="tableau grue ldb tous bushi">
+                        <span class="c">Daidoji</span>
+                        <span class="c"><a href="">Guerrier de fer</a></span>
+                        <span class="c">63 du LdB</span>
+                        <span class="c">Bushi</span>
+                        <span class="d">Garde du corps en armure lourde</span>
+                    </div>
+                    <div class="tableau grue cdp tous court shino">
+                        <span class="c">Daidoji</span>
+                        <span class="c"><a href="">Espion</a></span>
+                        <span class="c">90 des CdP</span>
+                        <span class="c">Courtisan, Shinobi</span>
+                        <span class="d">Expert de l'espionnage et du contre espionnage</span>
+                    </div>
+                    <div class="tableau grue cdlv tous bushi shino">
+                        <span class="c">Daidoji</span>
+                        <span class="c"><a href="">Busard</a></span>
+                        <span class="c">74 des CdlV</span>
+                        <span class="c">Bushi, Shinobi</span>
+                        <span class="d">À venir</span>
+                    </div>
+                    <div class="tableau grue ldb tous court">
+                        <span class="c">Doji</span>
+                        <span class="c"><a href="">Diplomates</a></span>
+                        <span class="c">64 du LdB</span>
+                        <span class="c">Courtisan</span>
+                        <span class="d">Courtisan expert en politique, maître des réseaux d'influence et des présents</span>
+                    </div>
+                    <div class="tableau grue cdp tous court">
+                        <span class="c">Doji</span>
+                        <span class="c"><a href="">Fonctionnaire</a></span>
+                        <span class="c">91 des CdP</span>
+                        <span class="c">Courtisan</span>
+                        <span class="d">Maître du débat, bureaucrate et protocolaire</span>
+                    </div>
+                    <div class="tableau grue ldb tous bushi artis">
+                        <span class="c">Kakita</span>
+                        <span class="c"><a href="">Duelliste</a></span>
+                        <span class="c">65 du LdB</span>
+                        <span class="c">Bushi, Artisan</span>
+                        <span class="d">Guerrier spécialisé dans les duels et les coups critique</span>
+                    </div>
+                    <div class="tableau grue outreM tous artis court">
+                        <span class="c">Kakita</span>
+                        <span class="c"><a href="">Forgeron</a></span>
+                        <span class="c">89 de l'Outremonde</span>
+                        <span class="c">Artisan, Courtisan</span>
+                        <span class="d">Forgeron créateur du style Kakita</span>
+                    </div>
+                </div>
+
+                <div class="dragonTable"><!-- Section Dragon -->
+                    <div class="tableau dragon">
+                        <san class="e">Dragons</san>
+                    </div>
+                    <div class="tableau dragon ldb tous shug">
+                        <span class="c">Agasha</span>
+                        <span class="c"><a href="">Mystique</a></span>
+                        <span class="c">66 du LdB</span>
+                        <span class="c">Shugenja</span>
+                        <span class="d">Prêtre qui peut transmuter les éléments de ses invocations</span>
+                    </div>
+                    <div class="tableau dragon cdlv tous shug bushi">
+                        <span class="c">Agasha</span>
+                        <span class="c"><a href="">Ascète</a></span>
+                        <span class="c">72 des CdlV</span>
+                        <span class="c">Shugenja, Bushi</span>
+                        <span class="d">À venir</span>
+                    </div>
+                    <div class="tableau dragon lrc tous shug">
+                        <span class="c">Agasha</span>
+                        <span class="c"><a href="">Alchimiste</a></span>
+                        <span class="c">80 des RC</span>
+                        <span class="c">Shugenja</span>
+                        <span class="d">À venir</span>
+                    </div>
+                    <div class="tableau dragon ldb tous court bushi">
+                        <span class="c">Kitsuki</span>
+                        <span class="c"><a href="">Enquêteur</a></span>
+                        <span class="c">67 du LdB</span>
+                        <span class="c">Courtisan, Bushi</span>
+                        <span class="d">Courtisan menant des enquêtes plus sur des preuves que des aveux</span>
+                    </div>
+                    <div class="tableau dragon ldb tous bushi">
+                        <span class="c">Mirumoto</span>
+                        <span class="c"><a href="">Adepte des cieux</a></span>
+                        <span class="c">68 du LdB</span>
+                        <span class="c">Bushi</span>
+                        <span class="d">Duelliste se servant d'une deuxième lame pour se défendre</span>
+                    </div>
+                    <div class="tableau dragon outreM tous bushi moine">
+                        <span class="c">Miromoto</span>
+                        <span class="c"><a href="">Lame du tao</a></span>
+                        <span class="c">92 de l'Outremonde</span>
+                        <span class="c">Bushi, Moine</span>
+                        <span class="d">Moine aguerri qui utilise le Ki avec des armes</span>
+                    </div>
+                    <div class="tableau dragon ldb tous moine">
+                        <span class="c">Togashi</span>
+                        <span class="c"><a href="">Moines tatoués</a></span>
+                        <span class="c">69 du LdB</span>
+                        <span class="c">Moine</span>
+                        <span class="d">Moine aux tatouages décuplant le Ki</span>
+                    </div>
+                    <div class="tableau dragon cdp tous court moine">
+                        <span class="c">Agasha</span>
+                        <span class="c"><a href="">Chroniqueur</a></span>
+                        <span class="c">97 des CdP</span>
+                        <span class="c">Courtisan, Moine</span>
+                        <span class="d">Historien qui peut jongler avec le Ki</span>
+                    </div>
+                </div>
+
+                <div class="lionTable"><!-- Section Lion -->
+                    <div class="tableau lion">
+                        <san class="e">Lions</san>
+                    </div>
+                    <div class="tableau lion ldb tous bushi">
+                        <span class="c">Akodo</span>
+                        <span class="c"><a href="">Commandant</a></span>
+                        <span class="c">70 du LdB</span>
+                        <span class="c">Bushi</span>
+                        <span class="d">Leader militaire qui sait jongler de ses réserves</span>
+                    </div>
+                    <div class="tableau lion cdlv tous bushi">
+                        <span class="c">Akodo</span>
+                        <span class="c"><a href="">Soldat</a></span>
+                        <span class="c">73 des CdlV</span>
+                        <span class="c">Bushi</span>
+                        <span class="d">À venir</span>
+                    </div>
+                    <div class="tableau lion ldb tous court">
+                        <span class="c">Ikoma</span>
+                        <span class="c"><a href="">Barde</a></span>
+                        <span class="c">71 du LdB</span>
+                        <span class="c">Courtisan</span>
+                        <span class="d">Beau parleur sachant gérer les émotions de son groupe</span>
+                    </div>
+                    <div class="tableau lion cdp tous court shino">
+                        <span class="c">Ikoma</span>
+                        <span class="c"><a href="">Ombre</a></span>
+                        <span class="c">92 des CdP</span>
+                        <span class="c">Courtisan, Shinobi</span>
+                        <span class="d">Espion du Lion, n'ayant pas peur du déshonneur</span>
+                    </div>
+                    <div class="tableau lion ldb tous shug">
+                        <span class="c">Kitsu</span>
+                        <span class="c"><a href="">Médium</a></span>
+                        <span class="c">72 du LdB</span>
+                        <span class="c">Shugenja</span>
+                        <span class="d">Prêtre qui n'a pas d'autres limites que celles de ces ancêtres</span>
+                    </div>
+                    <div class="tableau lion outreM tous artis bushi">
+                        <span class="c">Kitsu</span>
+                        <span class="c"><a href="">Médecin</a></span>
+                        <span class="c">90 de l'Outremonde</span>
+                        <span class="c">Artisan, Bushi</span>
+                        <span class="d">Médecin de guerre</span>
+                    </div>
+                    <div class="tableau lion lrc tous shug bushi">
+                        <span class="c">Kitsu</span>
+                        <span class="c"><a href="">Arpenteur de royaume</a></span>
+                        <span class="c">85 des RC</span>
+                        <span class="c">Shugenja, Bushi</span>
+                        <span class="d">À venir</span>
+                    </div>
+                    <div class="tableau lion ldb tous bushi">
+                        <span class="c">Matsu</span>
+                        <span class="c"><a href="">Berserker</a></span>
+                        <span class="c">73 du LdB</span>
+                        <span class="c">Bushi</span>
+                        <span class="d">Espérez ne jamais le voir enragé !</span>
+                    </div>
+                    <div class="tableau lion cdlv tous bushi">
+                        <span class="c">Matsu</span>
+                        <span class="c"><a href="">Dresseur</a></span>
+                        <span class="c">80 des CdlV</span>
+                        <span class="c">Bushi</span>
+                        <span class="d">À venir</span>
+                    </div>
+                </div>
+
+                <div class="phenixTable"><!-- Section Phénix -->
+                    <div class="tableau phenix">
+                        <san class="e">Phénix</san>
+                    </div>
+                    <div class="tableau phenix ldb tous court">
+                        <span class="c">Asako</span>
+                        <span class="c"><a href="">Maître du savoir</a></span>
+                        <span class="c">74 du LdB</span>
+                        <span class="c">Courtisan</span>
+                        <span class="d">Grand érudit et conseiller d'élite</span>
+                    </div>
+                    <div class="tableau phenix outreM tous court">
+                        <span class="c">Asako</span>
+                        <span class="c"><a href="">Inquisiteur</a></span>
+                        <span class="c">88 de l'Outremonde</span>
+                        <span class="c">Courtisan, Shugenja</span>
+                        <span class="d">Prêtre qui enquête sur les phénomènes surnaturels et les hérésies</span>
+                    </div>
+                    <div class="tableau phenix ldb tous shug">
+                        <span class="c">Isawa</span>
+                        <span class="c"><a href="">Élémentaliste</a></span>
+                        <span class="c">75 du LdB</span>
+                        <span class="c">Shugenja</span>
+                        <span class="d">L'élite des Prêtres</span>
+                    </div>
+                    <div class="tableau phenix cdlv tous shug">
+                        <span class="c">Isawa</span>
+                        <span class="c"><a href="">Tensai</a></span>
+                        <span class="c">79 des CdlV</span>
+                        <span class="c">Shugenja</span>
+                        <span class="d">À venir</span>
+                    </div>
+                    <div class="tableau phenix ldb tous shiba court">
+                        <span class="c">Shiba</span>
+                        <span class="c"><a href="">Protecteur</a></span>
+                        <span class="c">76 du LdB</span>
+                        <span class="c">Bushi, Courtisan</span>
+                        <span class="d">Garde du corps capable de proteger et soutenir émotionnellement ses alliés</span>
+                    </div>
+                    <div class="tableau phenix cdp tous artis">
+                        <span class="c">Shiba</span>
+                        <span class="c"><a href="">Artiste</a></span>
+                        <span class="c">94 des CdP</span>
+                        <span class="c">Artisan</span>
+                        <span class="d">L'élite des artistes au calme légendaire</span>
+                    </div>
+                    <div class="tableau phenix ldb tous moine">
+                        <span class="c">kaito</span>
+                        <span class="c"><a href="">Gardien de sanctuaire</a></span>
+                        <span class="c">77 du LdB</span>
+                        <span class="c">Moine</span>
+                        <span class="d">Archer aux flèches imprégnées d'invocation</span>
+                    </div>
+                    <div class="tableau phenix lrc tous court">
+                        <span class="c">Asako</span>
+                        <span class="c"><a href="">Quêteur d'esprits</a></span>
+                        <span class="c">83 des RC</span>
+                        <span class="c">Bushi, Shugenja</span>
+                        <span class="d">À venir</span>
+                    </div>
+                </div>
+
+                <div class="scorpionTable"><!-- Section Scorpion -->
+                    <div class="tableau scorpion">
+                        <san class="e">Scorpions</san>
+                    </div>
+                    <div class="tableau scorpion ldb tous court">
+                        <span class="c">Bayushi</span>
+                        <span class="c"><a href="">Manipulateur</a></span>
+                        <span class="c">78 du LdB</span>
+                        <span class="c">Courtisan</span>
+                        <span class="d">Courtisan versé dans l'art d'exploiter les désavantages de sa cible</span>
+                    </div>
+                    <div class="tableau scorpion cdp tous bushi shino">
+                        <span class="c">Bayushi</span>
+                        <span class="c"><a href="">Pourvoyeur de mort</a></span>
+                        <span class="c">89 des CdP</span>
+                        <span class="c">Bushi, Shinobi</span>
+                        <span class="d">Guerrier duelliste doué pour exploiter les désavantages de sa cible en combat</span>
+                    </div>
+                    <div class="tableau scorpion ldb tous shino court">
+                        <span class="c">Shosuro</span>
+                        <span class="c"><a href="">Infiltré</a></span>
+                        <span class="c">79 du LdB</span>
+                        <span class="c">Shinobi, Courtisan</span>
+                        <span class="d">Élite des attaquants furtifs</span>
+                    </div>
+                    <div class="tableau scorpion lrc tous shug bushi shino">
+                        <span class="c">Shosuro</span>
+                        <span class="c"><a href="">Tisseur d'ombres</a></span>
+                        <span class="c">87 des RC</span>
+                        <span class="c">Shugenja, Bushi, Shinobi</span>
+                        <span class="d">À venir</span>
+                    </div>
+                    <div class="tableau scorpion ldb tous shug court shino">
+                        <span class="c">Soshi</span>
+                        <span class="c"><a href="">Illusionniste</a></span>
+                        <span class="c">80 du LdB</span>
+                        <span class="c">Shugenja, Courtisan, Shinobi</span>
+                        <span class="d">Prêtre doué pour invoquer furtivement</span>
+                    </div>
+                    <div class="tableau scorpion ldb tous shug">
+                        <span class="c">Yogo</span>
+                        <span class="c"><a href="">Maître des glyphes</a></span>
+                        <span class="c">81 du LdB</span>
+                        <span class="c">Shugenja</span>
+                        <span class="d">prêtre doué pour créer des invocations à retardement/conditions</span>
+                    </div>
+                    <div class="tableau scorpion outreM tous shug">
+                        <span class="c">Yogo</span>
+                        <span class="c"><a href="">Intercesseur</a></span>
+                        <span class="c">95 de l'Outremonde</span>
+                        <span class="c">Shugenja</span>
+                        <span class="d">Prêtre maître des Origamis vivants</span>
+                    </div>
+                    <div class="tableau scorpion cdlv tous bushi moine">
+                        <span class="c">Yogo</span>
+                        <span class="c"><a href="">Pénitents</a></span>
+                        <span class="c">81 des CdlV</span>
+                        <span class="c">Bushi, Moine</span>
+                        <span class="d">À venir</span>
+                    </div>
+                </div>
+
+                <div class="licorneTable"><!-- Section Licorne -->
+                    <div class="tableau licorne">
+                        <san class="e">Licornes</san>
+                    </div>
+                    <div class="tableau licorne ldb tous court">
+                        <span class="c">Ide</span>
+                        <span class="c"><a href="">Négociant</a></span>
+                        <span class="c">82 du LdB</span>
+                        <span class="c">Courtisan</span>
+                        <span class="d">Courtisan tourné vers le commerce, le voyage et ouvert à toutes les cultures</span>
+                    </div>
+                    <div class="tableau licorne cdlv tous court">
+                        <span class="c">Ide</span>
+                        <span class="c"><a href="">Messager</a></span>
+                        <span class="c">78 des CdlV</span>
+                        <span class="c">Courtisan</span>
+                        <span class="d">À venir</span>
+                    </div>
+                    <div class="tableau licorne ldb tous shug artis">
+                        <span class="c">Iuchi</span>
+                        <span class="c"><a href="">Maître du meishödö</a></span>
+                        <span class="c">83 du LdB</span>
+                        <span class="c">Shugenja, Artisan</span>
+                        <span class="d">Prêtre capable de créer des talisman afin d'améliorer ses invocations</span>
+                    </div>
+                    <div class="tableau licorne ldb tous bushi">
+                        <span class="c">Moto</span>
+                        <span class="c"><a href="">Conquérant</a></span>
+                        <span class="c">84 du LdB</span>
+                        <span class="c">Bushi</span>
+                        <span class="d">Guerrier trapu et cavalier lourd</span>
+                    </div>
+                    <div class="tableau licorne outreM tous shug">
+                        <span class="c">Moto</span>
+                        <span class="c"><a href="">Vengeur</a></span>
+                        <span class="c">93 de l'Outremonde</span>
+                        <span class="c">Shugenja</span>
+                        <span class="d">Prêtre veillant à la continuation du cycle de la mort en traquant les non-morts</span>
+                    </div>
+                    <div class="tableau licorne ldb tous bushi court">
+                        <span class="c">Shinjo</span>
+                        <span class="c"><a href="">Éclaireur monté</a></span>
+                        <span class="c">85 du LdB</span>
+                        <span class="c">Bushi, Courtisan</span>
+                        <span class="d">Cavalier léger dont le cheval est son compagnon</span>
+                    </div>
+                    <div class="tableau licorne ldb tous bushi">
+                        <span class="c">Utaku</span>
+                        <span class="c"><a href="">Vierge de bataille</a></span>
+                        <span class="c">86 du LdB</span>
+                        <span class="c">Bushi</span>
+                        <span class="d">Cavalière d'élite</span>
+                    </div>
+                    <div class="tableau licorne lrc tous bushi sage">
+                        <span class="c">Utaku</span>
+                        <span class="c"><a href="">Maître d'écuries</a></span>
+                        <span class="c">88 des RC</span>
+                        <span class="c">Bushi, Sage</span>
+                        <span class="d">À venir</span>
+                    </div>
+                </div>
+
+                <div class="imperiauxTable"><!-- Section Impériaux -->
+                    <div class="tableau imperiaux">
+                        <san class="e">Impériaux</san>
+                    </div>
+                    <div class="tableau imperiaux ede tous artis court">
+                        <span class="c">Miya</span>
+                        <span class="c"><a href="">Cartographe</a></span>
+                        <span class="c">232 de l'EE</span>
+                        <span class="c">Artisan, Courtisan</span>
+                        <span class="d">Courtisan qui voyage beaucoup et est bien accueilli</span>
+                    </div>
+                    <div class="tableau imperiaux ede tous court">
+                        <span class="c">Miya</span>
+                        <span class="c"><a href="">Héraut</a></span>
+                        <span class="c">233 de l'EE</span>
+                        <span class="c">Courtisan</span>
+                        <span class="d">Politicien très aimable et neutre qui voyage pour transmettre les lois impériales</span>
+                    </div>
+                    <div class="tableau imperiaux ede tous court">
+                        <span class="c">Otomo</span>
+                        <span class="c"><a href="">Intrigant</a></span>
+                        <span class="c">234 de l'EE</span>
+                        <span class="c">Courtisan</span>
+                        <span class="d">Politicien très agressif</span>
+                    </div>
+                    <div class="tableau imperiaux ede tous shug artis">
+                        <span class="c">Seppun</span>
+                        <span class="c"><a href="">Astrologue</a></span>
+                        <span class="c">235 de l'EE</span>
+                        <span class="c">Shugenja, Artisan</span>
+                        <span class="d">Prêtre qui peut lire l'avenir</span>
+                    </div>
+                    <div class="tableau imperiaux ede tous bushi">
+                        <span class="c">Seppun</span>
+                        <span class="c"><a href="">Garde du palais</a></span>
+                        <span class="c">236 de l'EE</span>
+                        <span class="c">Bushi</span>
+                        <span class="d">Garde du corps rapide comme l'éclair</span>
+                    </div>
+                </div>
+
+                <div class="autreTable"><!-- Section Autre -->
+                    <div class="tableau autre">
+                        <san class="e">Les autres</san>
+                    </div>
+                    <div class="tableau autre ldb tous bushi court">
+                        <span class="c">Ronin</span>
+                        <span class="c"><a href="">Expérimenté</a></span>
+                        <span class="c">87 du LdB</span>
+                        <span class="c">Bushi, Courtisan</span>
+                        <span class="d">Guerrier sans seigneur qui expérimente sa propre voie</span>
+                    </div>
+                    <div class="tableau autre vdv tous bushi">
+                        <span class="c">Ronin</span>
+                        <span class="c"><a href="">La lame errante</a></span>
+                        <span class="c">48 de la VdV</span>
+                        <span class="c">Bushi</span>
+                        <span class="d">À venir</span>
+                    </div>
+                    <div class="tableau autre ede tous moine">
+                        <span class="c">Ordre</span>
+                        <span class="c"><a href="">Moines des fortunes</a></span>
+                        <span class="c">237 de l'EE</span>
+                        <span class="c">Moine</span>
+                        <span class="d">Moine dédiés au culte des Fortunes ou des Kamis</span>
+                    </div>
+                    <div class="tableau autre ede tous moine">
+                        <span class="c">Ordre</span>
+                        <span class="c"><a href="">Moines Shinséistes</a></span>
+                        <span class="c">238 de l'EE</span>
+                        <span class="c">Moine</span>
+                        <span class="d">Moine suivant la voie de Shinsei, tourné vers le vide et le tout</span>
+                    </div>
+                    <div class="tableau autre ede tous court shug">
+                        <span class="c">Kitsune (esprit-renard)</span>
+                        <span class="c"><a href="">Tradition d'imposteur</a></span>
+                        <span class="c">239 de l'EE</span>
+                        <span class="c">Courtisan, Shugenja</span>
+                        <span class="d">Esprit qui prend une apparence humaine afin de s'amuser</span>
+                    </div>
+                    <div class="tableau autre ede tous shino">
+                        <span class="c">Conspiration</span>
+                        <span class="c"><a href="">Saboteur du Kolat</a></span>
+                        <span class="c">240 de l'EE</span>
+                        <span class="c">Shinobi</span>
+                        <span class="d">Agent sous couverture faisant partie d'un vaste et très sombre complot</span>
+                    </div>
+                    <div class="tableau autre cdp tous shino">
+                        <span class="c">Ninja</span>
+                        <span class="c"><a href="">Mercenaire</a></span>
+                        <span class="c">93 des CdP</span>
+                        <span class="c">Shinobi</span>
+                        <span class="d">Ombre parfaite</span>
+                    </div>
+                    <div class="tableau autre vdv tous bushi shino">
+                        <span class="c">Autre</span>
+                        <span class="c"><a href="">Disciple de la serre</a></span>
+                        <span class="c">49 de la VdV</span>
+                        <span class="c">Bushi, Shinobi</span>
+                        <span class="d">À venir</span>
+                    </div>
+                    <div class="tableau autre vdv tous court bushi">
+                        <span class="c">Autre</span>
+                        <span class="c"><a href="">Chasseur de trésor</a></span>
+                        <span class="c">50 de la VdV</span>
+                        <span class="c">Courtisan, Bushi</span>
+                        <span class="d">À venir</span>
+                    </div>
+                    <div class="tableau autre vdv tous shino court">
+                        <span class="c">Autre</span>
+                        <span class="c"><a href="">École des feuilles</a></span>
+                        <span class="c">51 de la VdV</span>
+                        <span class="c">Shinobi, Courtisan</span>
+                        <span class="d">À venir</span>
+                    </div>
+                    <div class="tableau autre vdv tous shug court">
+                        <span class="c">Autre</span>
+                        <span class="c"><a href="">Voix de la nature</a></span>
+                        <span class="c">52 de la VdV</span>
+                        <span class="c">Shugenja, Courtisan</span>
+                        <span class="d">À venir</span>
+                    </div>
+                    <div class="tableau autre vdv tous artis">
+                        <span class="c">Autre</span>
+                        <span class="c"><a href="">Artisan des routes</a></span>
+                        <span class="c">53 de la VdV</span>
+                        <span class="c">Artisan</span>
+                        <span class="d">À venir</span>
+                    </div>
+                    <div class="tableau autre vdv tous moine court">
+                        <span class="c">Autre</span>
+                        <span class="c"><a href="">Mystique de la montagne</a></span>
+                        <span class="c">54 de la VdV</span>
+                        <span class="c">Moine, Courtisan</span>
+                        <span class="d">À venir</span>
+                    </div>
+                    <div class="tableau autre vdv tous sage">
+                        <span class="c">Ujik</span>
+                        <span class="c"><a href="">Devin</a></span>
+                        <span class="c">55 de la VdV</span>
+                        <span class="c">Sage</span>
+                        <span class="d">À venir</span>
+                    </div>
+                    <div class="tableau autre vdv tous bushi sage">
+                        <span class="c">Qamariste</span>
+                        <span class="c"><a href="">Porteur de bouclier</a></span>
+                        <span class="c">56 de la VdV</span>
+                        <span class="c">Bushi, Sage</span>
+                        <span class="d">À venir</span>
+                    </div>
+                    <div class="tableau autre vdv tous sage">
+                        <span class="c">Qamariste</span>
+                        <span class="c"><a href="">Alchimiste</a></span>
+                        <span class="c">57 de la VdV</span>
+                        <span class="c">Sage</span>
+                        <span class="d">À venir</span>
+                    </div>
+                    <div class="tableau autre vdv tous bushi sage">
+                        <span class="c">Royaumes d'Ivoire</span>
+                        <span class="c"><a href="">Sage</a></span>
+                        <span class="c">58 de la VdV</span>
+                        <span class="c">Bushi, Sage</span>
+                        <span class="d">À venir</span>
+                    </div>
+                    <div class="tableau autre vdv tous bushi sage">
+                        <span class="c">Royaumes d'Ivoire</span>
+                        <span class="c"><a href="">Lames dansantes</a></span>
+                        <span class="c">59 de la VdV</span>
+                        <span class="c">Bushi</span>
+                        <span class="d">À venir</span>
+                    </div>
+                    <div class="tableau autre lrc tous sage shug">
+                        <span class="c">Ishiken</span>
+                        <span class="c"><a href="">Initié</a></span>
+                        <span class="c">82 des RC</span>
+                        <span class="c">Sage, Shugenja</span>
+                        <span class="d">À venir</span>
+                    </div>
+
+                </div>
+
+                <div class="mineurTable"><!-- Section Clans mineurs -->
+                    <div class="tableau mineur">
+                        <san class="e">Clans mineurs</san>
+                    </div>
+                    <div class="tableau mineur outreM tous shug">
+                        <span class="c">Toritaka</span>
+                        <span class="c"><a href="">Chasseur de fantômes</a></span>
+                        <span class="c">94 de l'Outremonde</span>
+                        <span class="c">Shugenja</span>
+                        <span class="d">Combattant de créatures Extérieures</span>
+                    </div>
+                    <div class="tableau mineur cdp tous court shug">
+                        <span class="c">Shika</span>
+                        <span class="c"><a href="">Entremetteur</a></span>
+                        <span class="c">95 des CdP</span>
+                        <span class="c">Courtisan, Shugenja</span>
+                        <span class="d">Spécialistes des unions bonnes pour l'Empire</span>
+                    </div>
+                    <div class="tableau mineur cdp tous bushi shino">
+                        <span class="c">Shika</span>
+                        <span class="c"><a href="">Lancier dansant</a></span>
+                        <span class="c">96 des CdP</span>
+                        <span class="c">Bushi, Shinobi</span>
+                        <span class="d">Garde du corps voltigeur</span>
+                    </div>
+                    <div class="tableau mineur plus tous bushi">
+                        <span class="c">Flotte des Tempêtes</span>
+                        <span class="c"><a href="">Marin</a></span>
+                        <span class="c">WEB supplément</span>
+                        <span class="c">Bushi</span>
+                        <span class="d">Opportuniste, il utilise tous les avantages qu'il peut, même au niveau de l'armement</span>
+                    </div>
+                    <div class="tableau mineur plus tous shug">
+                        <span class="c">Flotte des Tempêtes</span>
+                        <span class="c"><a href="">Prophète des marées</a></span>
+                        <span class="c">WEB supplément</span>
+                        <span class="c">Shugenja</span>
+                        <span class="d">Prêtre entrainé pour apaiser les esprits des vagues et des tempêtes</span>
+                    </div>
+                    <div class="tableau mineur plus tous court">
+                        <span class="c">Kasuga</span>
+                        <span class="c"><a href="">Contrebandier</a></span>
+                        <span class="c">Kit du maître</span>
+                        <span class="c">Courtisan</span>
+                        <span class="d">Samouraï chargé de superviser les opérations de contrebande</span>
+                    </div>
+                    <div class="tableau mineur cdlv tous bushi">
+                        <span class="c">Ichirö</span>
+                        <span class="c"><a href="">Lutteur</a></span>
+                        <span class="c">76 des CdlV</span>
+                        <span class="c">Bushi</span>
+                        <span class="d">À venir</span>
+                    </div>
+                    <div class="tableau mineur cdlv tous artis court">
+                        <span class="c">Ichirö</span>
+                        <span class="c"><a href="">Forgeron</a></span>
+                        <span class="c">77 des CdlV</span>
+                        <span class="c">Artisan, Courtisan</span>
+                        <span class="d">À venir</span>
+                    </div>
+                    <div class="tableau mineur lrc tous bushi shug">
+                        <span class="c">Moshi</span>
+                        <span class="c"><a href="">Sentinelles du soleil</a></span>
+                        <span class="c">86 des RC</span>
+                        <span class="c">Bushi, Shugenja</span>
+                        <span class="d">À venir</span>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+        <footer>
+            <h3>By AlphaFox_</h3>
+        </footer>
+    </body>
+</html>

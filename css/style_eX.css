@@ -1,0 +1,108 @@
+.crabe {
+    background-color: rgba(61, 46, 136, 0.2);
+}
+
+.grue {
+    background-color: rgba(108, 199, 254, 0.2);
+}
+
+.lion {
+    background-color: rgba(229, 188, 0, 0.2);
+}
+
+.phenix {
+    background-color: rgba(228, 88, 0, 0.2);
+}
+
+.dragon {
+    background-color: rgba(46, 114, 55, 0.2);
+}
+
+.licorne {
+    background-color: rgba(108, 52, 179, 0.2);
+}
+
+.scorpion {
+    background-color: rgba(145, 1, 11, 0.2);
+}
+
+.imperiaux {
+    background-color: rgba(53, 100, 98, 0.2);
+}
+
+.autre {
+    background-color: rgba(150, 150, 150, 0.2);
+}
+
+.mineur {
+    background-color: rgba(256, 256, 256, 0.5);
+}
+
+fieldset {
+    position: absolute;
+    width: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    left: 50px;
+    top: 150px;
+    border: none;
+    gap: 10px;
+    /*border: 1px solid silver;*/
+    background: linear-gradient(honeydew, rgba(74, 140, 137, 0.7));
+}
+
+legend {
+    border-left: 1px solid silver;
+    border-right: 1px solid silver;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.faux_boutton {
+    border: 1px solid black;
+    width: 100px;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 2px 2px grey;
+    background-color: aliceblue;
+    font-size: 1em;
+    z-index: 10;
+}
+
+a {
+    background-color: rgba(0, 0, 0, 0);
+    text-decoration: none;
+}
+
+.cartesEcoles {
+    width: 720px;
+}
+
+@media screen and (max-width: 1350px) {
+    fieldset {
+        position: initial;
+        width: 1020px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}
+
+@media print {
+    fieldset {
+        position: initial;
+        width: 1020px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    fieldset {
+        display: none;
+    }
+}

@@ -1,0 +1,16 @@
+.maps {
+    position: relative;
+}
+
+.maps_hover {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    display: none;
+}
+
+.maps:hover .maps_hover {
+    display: flex;
+}
