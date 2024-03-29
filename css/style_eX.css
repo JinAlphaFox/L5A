@@ -81,8 +81,48 @@ a {
     width: 720px;
 }
 
+.monClan {
+    height: 25px;
+    width: 25px;
+    display: inline;
+}
+
+.cartesEcolesPetites {
+    width: 100%;
+    display: inline-block;
+}
+
+h3 {
+    margin: 10px;
+}
+
+h4 {
+    font-size: 1em;
+    font-style: italic;
+    margin: 10px;
+}
+
+p {
+    text-align: justify;
+    margin: 10px;
+}
+
+#listeEcoles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+#listeEcoles a {
+    width: 30%;
+    display: inline-block;
+}
+
 @media screen and (max-width: 1350px) {
     fieldset {
+        margin-top : 20px;
+        margin-bottom : 20px;
         position: initial;
         width: 1020px;
         flex-direction: row;
